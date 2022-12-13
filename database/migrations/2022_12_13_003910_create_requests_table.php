@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('requests', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('student_id');
             $table->foreignId('lecture_id');
             $table->foreign('lecture_id')->references('id')->on('lectures')->onDelete('cascade');
             $table->foreignId('admin_id');

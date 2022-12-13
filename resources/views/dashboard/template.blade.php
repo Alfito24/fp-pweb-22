@@ -119,13 +119,13 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="/dashboard/tambahproduk" class="nav-link">
+                  <a href="/dashboard/adduser" class="nav-link">
                     <i class="nav-icon fas fas fa-cart-plus"></i>
                     <p>Tambah User</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="/dashboard/daftarproduk" class="nav-link">
+                  <a href="/dashboard/listuser" class="nav-link">
                     <i class="nav-icon fas fas fas fas fa-list"></i>
                     <p>Daftar User</p>
                   </a>

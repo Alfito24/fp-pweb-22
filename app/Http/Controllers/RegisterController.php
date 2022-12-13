@@ -15,7 +15,7 @@ class RegisterController extends Controller
         $user = new User;
         $validatedData=  $request->validate([
             'nik'=>'required|max:16|min:16',
-             'full_name' => 'required',
+             'first_name' => 'required',
              'email' => 'required|email:dns|unique:users',
              'phone_number'=>'required|min:10|max:13',
              'password' => 'required|min:8|max:20',
@@ -25,7 +25,7 @@ class RegisterController extends Controller
         $nama_file = time()."_".$file->getClientOriginalName();
         $tujuan_upload = 'data_file';
         $file->move($tujuan_upload,$nama_file);
-        $user->full_name = $request->full_name;
+        $user->first_name = $request->full_name;
         $user->middle_name = $request->middle_name;
         $user->last_name = $request->last_name;
         $user->email = $request->email;

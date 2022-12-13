@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Staff extends Model
 {
     use HasFactory;
+    public function request(){
+        return $this->hasMany(Request::class);
+    }
 }
