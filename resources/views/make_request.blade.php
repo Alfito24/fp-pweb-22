@@ -14,11 +14,13 @@
         <h2 class="text-center">
             Make a Request
         </h2>
-        <form action="" method="POST"enctype="multipart/form-data">
+        {{-- <strong>{{ $message }}</strong> --}}
+        <form action="/make-request" method="POST"enctype="multipart/form-data">
+          @csrf
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Upload your Final Paper</label>
-              <input type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="paper">
-              <div id="emailHelp" class="form-text">We'll never share your file with anyone else.</div>
+              <input type="file" class="form-control" id="file" name="file">
+              <div id="file" class="form-text">We'll never share your file with anyone else.</div>
             </div>
             <button type="submit" class="btn btn-warning">Submit</button>
           </form>

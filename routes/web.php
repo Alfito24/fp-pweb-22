@@ -18,6 +18,9 @@ use App\Http\Controllers\AdminController;
 */
 
 Route::post('/register', [RegisterController::class, 'store'] );
+Route::get('/', function () {
+    return view('welcome');
+});
 Route::get('/register', function () {
     return view('register');
 });
@@ -28,6 +31,7 @@ Route::get('/login', function () {
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/make-request', [RequestController::class, 'index']);
+Route::post('/make-request', [RequestController::class, 'store']);
 Route::get('/dashboard', [AdminController::class, 'index']);
 Route::get('/dashboard/adduser', [AdminController::class, 'adduser']);
 Route::get('/dashboard/listuser', [AdminController::class, 'listUser']);
@@ -45,3 +49,7 @@ Route::post('/register-staff', [RegisterController::class, 'store2'] );
 
 Route::get('/register-lecturer', [RegisterController::class, 'index2']);
 Route::post('/register-lecturer', [RegisterController::class, 'store2'] );
+
+
+
+
