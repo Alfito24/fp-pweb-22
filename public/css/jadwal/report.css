@@ -1,0 +1,43 @@
+.card-report h4{
+font-size: 25px
+}
+.card-report .card-body{
+    margin-top: 0;
+    padding-top: 0;
+}
+.card-section{
+height: auto;
+}
+.card-section .row{
+padding-bottom: 70px;
+}
+.option{
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+.option .h1{
+    text-align: center;
+    margin: 25px;
+}
+.btn-lihat {
+    background-color: #0081FF;
+    color: white;
+}
+.btn-lihat:hover{
+    background-color: transparent;
+    color: #0081FF;
+    border-color: #0081FF;
+}
+.btn{
+    text-transform: none;
+}
+.null{
+    height: auto;
+}
+.btn-add{
+    padding-bottom: 100px;
+
+}
+.btn-add a{
+    text-transform: uppercase;
+}
