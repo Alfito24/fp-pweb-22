@@ -18,13 +18,18 @@
   <body class="text-center">
 
 <main class="form-registration mb-3">
-  <form action="/register" method="POST">
+  <form action="/register" method="POST" enctype="multipart/form-data">
     @csrf
     <img class="mb-4 rounded" src="img/bymeals-logo.png" alt="" width="150px">
     <h1 class="h3 mb-3 fw-normal">Please Register First</h1>
     <div class="form-floating">
         <input value="{{ old('full_name') }}" type="text" name="full_name" class="form-control id="name">
         <label for="full_name">Full Name</label>
+        @error('full_name')
+        <div class="invalid-feedback">
+           {{ $message }}
+        </div>
+        @enderror
     </div>
     <div class="form-floating">
         <input value="{{ old('middle_name') }}" type="text" name="middle_name" class="form-control id="name">
@@ -35,12 +40,22 @@
         <label for="last_name">Last Name</label>
     </div>
     <div class="form-floating">
-        <input value="{{ old('email') }}" type="email" name="email" class="form-control id="name">
+        <input value="{{ old('email') }}" type="email" name="email" class="form-control id="email">
         <label for="email">Email</label>
     </div>
+    @error('email')
+        <div class="invalid-feedback">
+           {{ $message }}
+        </div>
+        @enderror
     <div class="form-floating">
         <input value="{{ old('phone_number') }}" type="number" name="phone_number" class="form-control id="name">
         <label for="phone_number">Phone Number</label>
+        @error('phone_number')
+        <div class="invalid-feedback">
+           {{ $message }}
+        </div>
+        @enderror
     </div>
     <div class="form-floating">
         <input value="{{ old('birth_date') }}" type="text" name="birth_date" class="form-control id="name">
@@ -51,12 +66,17 @@
         <label for="place_of_birth">Place of Birth</label>
     </div>
     <div class="form-floating">
-        <input value="{{ old('photo') }}" type="file" name="photo" class="form-control id="name">
+        <input value="{{ old('photo') }}" type="file" name="photo" class="form-control id="photo">
         <label for="photo">Photo</label>
     </div>
     <div class="form-floating">
         <input value="{{ old('nik') }}" type="number" name="nik" class="form-control id="name">
         <label for="nik">NIK</label>
+        @error('nik')
+        <div class="invalid-feedback">
+           {{ $message }}
+        </div>
+        @enderror
     </div>
     <div class="form-floating">
         <input value="{{ old('registration_number') }}" type="number" name="registration_number" class="form-control id="name">
@@ -83,17 +103,22 @@
         <label for="address">Address</label>
     </div>
     <div class="form-floating">
+        <input value="{{ old('password') }}" type="password" name="password" class="form-control id="password">
+        <label for="password">Password</label>
+    </div>
+    <div class="form-floating">
         <select name="role" id="cars">
+            <option value=null selected>Select your role</option>
             <option value="student">Student</option>
             <option value="lecture">Lecture</option>
             <option value="admin">Admin</option>
         </select>
-        <label for="role">Role</label>
     </div>
-    <div class="form-floating">
-        <input value="{{ old('password') }}" type="password" name="password" class="form-control id="password">
-        <label for="password">Password</label>
-    </div>
+    @error('password')
+        <div class="invalid-feedback">
+           {{ $message }}
+        </div>
+        @enderror
     <button class="w-100 btn btn-lg btn-warning" type="submit">Register</button>
   </form>
   <small >Already have an account? <a class="mt-3" href="/login">Login</a></small>
