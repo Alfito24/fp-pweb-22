@@ -20,10 +20,10 @@ return new class extends Migration
             $table->string('rank');
             $table->string('class');
             $table->string('functional');
-            $table->integer('nidn');
-            $table->string('highest_edu');
+            $table->string('highest_education');
             $table->string('before_name_degree');
             $table->string('after_name_degree');
+            $table->string('staff_status');
             $table->timestamps();
         });
     }

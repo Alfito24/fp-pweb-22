@@ -21,7 +21,7 @@
   <form action="/register" method="POST" enctype="multipart/form-data">
     @csrf
     <img class="mb-4 rounded" src="img/bymeals-logo.png" alt="" width="150px">
-    <h1 class="h3 mb-3 fw-normal">Student Register</h1>
+    <h1 class="h3 mb-3 fw-normal">Staff Register</h1>
     <div class="form-floating">
         <input value="{{ old('marital_status') }}" type="text" name="marital_status" class="form-control id="name">
         <label for="marital_status">Marital Status</label>

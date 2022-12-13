@@ -59,10 +59,10 @@
         <input value="{{ old('place_of_birth') }}" type="text" name="place_of_birth" class="form-control id="name">
         <label for="place_of_birth">Place of Birth</label>
     </div>
-    <div class="form-floating">
+    {{-- <div class="form-floating">
         <input value="{{ old('photo') }}" type="file" name="photo" class="form-control id="photo">
         <label for="photo">Photo</label>
-    </div>
+    </div> --}}
     <div class="form-floating">
         <input value="{{ old('nik') }}" type="number" name="nik" class="form-control id="name">
         <label for="nik">NIK</label>

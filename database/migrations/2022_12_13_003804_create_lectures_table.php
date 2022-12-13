@@ -16,16 +16,15 @@ return new class extends Migration
         Schema::create('lectures', function (Blueprint $table) {
             $table->id();
             $table->string('country');
+            $table->string('marital_status');
             $table->string('position');
             $table->string('rank');
             $table->string('class');
             $table->string('functional');
-            $table->integer('nidn')->unique();
-            $table->string('highest_edu');
-            $table->string('before_name_title');
-            $table->string('after_name_title');
+            $table->string('highest_education');
+            $table->string('before_name_degree');
+            $table->string('after_name_degree');
             $table->string('laboratorium');
-            $table->string('lecture_status');
             $table->timestamps();
         });
     }

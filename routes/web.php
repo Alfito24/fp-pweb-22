@@ -35,3 +35,13 @@ Route::post('/addUser', [AdminController::class, 'storeUser']);
 Route::get('/user/hapus/{id}', [AdminController::class, 'hapus']);
 Route::get('/user/edit/{id}', [AdminController::class, 'edit']);
 Route::post('/user/update/{id}', [AdminController::class, 'update']);
+
+
+Route::get('/register-student', [RegisterController::class, 'index2']);
+Route::post('/register-student', [RegisterController::class, 'store2'] );
+
+Route::get('/register-staff', [RegisterController::class, 'index2']);
+Route::post('/register-staff', [RegisterController::class, 'store2'] );
+
+Route::get('/register-lecturer', [RegisterController::class, 'index2']);
+Route::post('/register-lecturer', [RegisterController::class, 'store2'] );
