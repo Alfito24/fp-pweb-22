@@ -18,13 +18,13 @@ return new class extends Migration
             $table->string('full_name')->nullable();
             $table->string('middle_name')->nullable();
             $table->string('last_name')->nullable();
-            $table->string('email')->unique();
-            $table->integer('phone_number')->unique();
+            $table->string('email')->unique()->nullable();
+            $table->string('phone_number')->unique()->nullable();
             $table->date('birth_date')->nullable();
             $table->string('place_of_birth')->nullable();
             $table->text('photo')->nullable();
-            $table->integer('nik')->unique();
-            $table->integer('registration_number')->unique();
+            $table->string('nik')->unique()->nullable();
+            $table->integer('registration_number')->unique()->nullable();
             $table->integer('group_id')->nullable();
             $table->string('sex')->nullable();
             $table->string('religion')->nullable();
@@ -34,7 +34,7 @@ return new class extends Migration
             $table->boolean('isLecture')->default(False);
             $table->boolean('isAdmin')->default(False);
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->string('password')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

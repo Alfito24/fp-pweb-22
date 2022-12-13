@@ -13,15 +13,14 @@ class RegisterController extends Controller
 {
     public function store(Request $request){
         $user = new User;
-        // $validatedData=  $request->validate([
-        //     'nik'=>'required|max:16|min:16',
-        //      'full_name' => 'required',
-        //      'email' => 'required|email:dns|unique:users',
-        //      'phone_number'=>'required|min:10|max:13',
-        //      'password' => 'required|min:8|max:20',
-        //  ]);
-        // $validatedData['password'] = Hash::make($validatedData['password']);
-        // User::create($validatedData);
+        $validatedData=  $request->validate([
+            'nik'=>'required|max:16|min:16',
+             'full_name' => 'required',
+             'email' => 'required|email:dns|unique:users',
+             'phone_number'=>'required|min:10|max:13',
+             'password' => 'required|min:8|max:20',
+         ]);
+        $validatedData['password'] = Hash::make($validatedData['password']);
         $file = $request->file('photo');
         $nama_file = time()."_".$file->getClientOriginalName();
         $tujuan_upload = 'data_file';
@@ -38,9 +37,9 @@ class RegisterController extends Controller
         $user->phone_number = $request->phone_number;
         $user->birth_date = $request->birth_date;
         $user->place_of_birth = $request->place_of_birth;
-        // $user->password = $validatedData['password'];
+        $user->password = $validatedData['password'];
         $user->sex = $request->sex;
-        $user->password = $request->password;
+        // $user->password = $request->password;
         $user->religion = $request->religion;
         $user->blood_type = $request->blood_type;
          if($request->role == 'student'){

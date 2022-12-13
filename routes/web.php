@@ -19,6 +19,9 @@ Route::post('/register', [RegisterController::class, 'store'] );
 Route::get('/register', function () {
     return view('register');
 });
+Route::get('/dashboard', function () {
+    return view('dashboard.template');
+});
 Route::get('/login', function () {
     return view('login');
 });

@@ -26,9 +26,7 @@
         <input value="{{ old('full_name') }}" type="text" name="full_name" class="form-control id="name">
         <label for="full_name">Full Name</label>
         @error('full_name')
-        <div class="invalid-feedback">
-           {{ $message }}
-        </div>
+        <div class="error">{{ $message }}</div>
         @enderror
     </div>
     <div class="form-floating">
@@ -44,18 +42,14 @@
         <label for="email">Email</label>
     </div>
     @error('email')
-        <div class="invalid-feedback">
-           {{ $message }}
-        </div>
-        @enderror
+    <div class="error">{{ $message }}</div>
+    @enderror
     <div class="form-floating">
         <input value="{{ old('phone_number') }}" type="number" name="phone_number" class="form-control id="name">
         <label for="phone_number">Phone Number</label>
         @error('phone_number')
-        <div class="invalid-feedback">
-           {{ $message }}
-        </div>
-        @enderror
+    <div class="error">{{ $message }}</div>
+    @enderror
     </div>
     <div class="form-floating">
         <input value="{{ old('birth_date') }}" type="text" name="birth_date" class="form-control id="name">
@@ -73,9 +67,7 @@
         <input value="{{ old('nik') }}" type="number" name="nik" class="form-control id="name">
         <label for="nik">NIK</label>
         @error('nik')
-        <div class="invalid-feedback">
-           {{ $message }}
-        </div>
+        <div class="error">{{ $message }}</div>
         @enderror
     </div>
     <div class="form-floating">
