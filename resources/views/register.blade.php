@@ -23,18 +23,18 @@
     <img class="mb-4 rounded" src="img/bymeals-logo.png" alt="" width="150px">
     <h1 class="h3 mb-3 fw-normal">Please Register First</h1>
     <div class="form-floating">
-        <input value="{{ old('full_name') }}" type="text" name="full_name" class="form-control id="name">
-        <label for="full_name">Full Name</label>
-        @error('full_name')
+        <input value="{{ old('first_name') }}" type="text" name="first_name" class="form-control" id="first_name">
+        <label for="first_name">First Name</label>
+        @error('first_name')
         <div class="error">{{ $message }}</div>
         @enderror
     </div>
     <div class="form-floating">
-        <input value="{{ old('middle_name') }}" type="text" name="middle_name" class="form-control id="name">
+        <input value="{{ old('middle_name') }}" type="text" name="middle_name" class="form-control" id="middle_name">
         <label for="middle_name">Middle Name</label>
     </div>
     <div class="form-floating">
-        <input value="{{ old('last_name') }}" type="text" name="last_name" class="form-control id="name">
+        <input value="{{ old('last_name') }}" type="text" name="last_name" class="form-control" id="last_name">
         <label for="last_name">Last Name</label>
     </div>
     <div class="form-floating">
@@ -45,41 +45,48 @@
     <div class="error">{{ $message }}</div>
     @enderror
     <div class="form-floating">
-        <input value="{{ old('phone_number') }}" type="number" name="phone_number" class="form-control id="name">
+        <input value="{{ old('phone_number') }}" type="number" name="phone_number" class="form-control" id="phone_number">
         <label for="phone_number">Phone Number</label>
         @error('phone_number')
     <div class="error">{{ $message }}</div>
     @enderror
     </div>
     <div class="form-floating">
-        <input value="{{ old('birth_date') }}" type="text" name="birth_date" class="form-control id="name">
+        <input value="{{ old('birth_date') }}" type="date" name="birth_date" class="form-control" id="birth_date">
         <label for="birth_date">Birth Date</label>
     </div>
     <div class="form-floating">
-        <input value="{{ old('place_of_birth') }}" type="text" name="place_of_birth" class="form-control id="name">
+        <input value="{{ old('place_of_birth') }}" type="text" name="place_of_birth" class="form-control" id="place_of_birth">
         <label for="place_of_birth">Place of Birth</label>
     </div>
-    {{-- <div class="form-floating">
-        <input value="{{ old('photo') }}" type="file" name="photo" class="form-control id="photo">
-        <label for="photo">Photo</label>
-    </div> --}}
     <div class="form-floating">
-        <input value="{{ old('nik') }}" type="number" name="nik" class="form-control id="name">
+        <input value="{{ old('photo') }}" type="file" name="photo" class="form-control" id="photo">
+        <label for="photo">Photo</label>
+    </div>
+    <div class="form-floating">
+        <input value="{{ old('nik') }}" type="number" name="nik" class="form-control" id="nik">
         <label for="nik">NIK</label>
         @error('nik')
         <div class="error">{{ $message }}</div>
         @enderror
     </div>
     <div class="form-floating">
-        <input value="{{ old('registration_number') }}" type="number" name="registration_number" class="form-control id="name">
+        <input value="{{ old('unit_name') }}" type="text" name="unit_name" class="form-control" id="unit_name">
+        <label for="unit_name">Unit Name</label>
+        @error('unit_name')
+        <div class="error">{{ $message }}</div>
+        @enderror
+    </div>
+    <div class="form-floating">
+        <input value="{{ old('registration_number') }}" type="number" name="registration_number" class="form-control" id="registration_number">
         <label for="registration_number">Registration Number</label>
     </div>
     <div class="form-floating">
-        <input value="{{ old('group_id') }}" type="number" name="group_id" class="form-control id="name">
+        <input value="{{ old('group_id') }}" type="text" name="group_id" class="form-control" id="group_id">
         <label for="group_id">Group ID</label>
     </div>
     <div class="form-floating">
-        <input value="{{ old('sex') }}" type="text" name="sex" class="form-control id="sex">
+        <input value="{{ old('sex') }}" type="text" name="sex" class="form-control" id="sex">
         <label for="sex">Sex</label>
     </div>
     <div class="form-floating">
@@ -95,16 +102,16 @@
         <label for="address">Address</label>
     </div>
     <div class="form-floating">
-        <input value="{{ old('password') }}" type="password" name="password" class="form-control id="password">
-        <label for="password">Password</label>
-    </div>
-    <div class="form-floating">
         <select name="role" id="cars">
             <option value=null selected>Select your role</option>
             <option value="student">Student</option>
             <option value="lecture">Lecture</option>
             <option value="admin">Admin</option>
         </select>
+    </div>
+    <div class="form-floating">
+        <input value="{{ old('password') }}" type="password" name="password" class="form-control id="password">
+        <label for="password">Password</label>
     </div>
     @error('password')
         <div class="invalid-feedback">

@@ -3,11 +3,14 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
-use App\Models\Request;
-use Laravel\Sanctum\HasApiTokens;
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use App\Models\Student;
+use App\Models\Staff;
+use App\Models\Lecture;
+use App\Models\Request;
+use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
@@ -18,8 +21,28 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $guarded = [
-        'id'
+    protected $table = "users";
+    protected $fillable = [
+        'first_name',
+        'middle_name',
+        'last_name',
+        'email',
+        'phone_number',
+        'birth_date',
+        'place_of_birth',
+        'nik',
+        'unit_name',
+        'registration_number',
+        'group_id',
+        'sex',
+        'religion',
+        'blood_type',
+        'address',
+        'role',
+        'isStudent',
+        'isLecture',
+        'isAdmin',
+        'password'
     ];
 
     /**
@@ -40,7 +63,24 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    public function request(){
-        return $this->hasMany(Request::class);
+
+    public function student()
+    {
+        return $this->hasOne(Student::class);
+    }
+
+    public function staff()
+    {
+        return $this->hasOne(Staff::class);
+    }
+
+    public function lecture()
+    {
+        return $this->hasOne(Lecture::class);
+    }
+
+    public function request()
+    {
+        return $this->hasMany(Request::class, 'user_id', 'id');
     }
 }
