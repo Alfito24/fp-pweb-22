@@ -17,7 +17,6 @@
         </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
-
     <!-- Main content -->
     <section class="content">
         <form action="/addUser" method="POST" enctype="multipart/form-data">

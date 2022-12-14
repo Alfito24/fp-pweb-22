@@ -19,7 +19,7 @@ class RequestController extends Controller
 	    $file->move($tujuan_upload,$nama_file);
         ModelsRequest::create([
             'file'=>$nama_file,
-            'student_id'=>Auth::id(),
+            'student_id'=>1,
         ]);
         return redirect('/');
     }
