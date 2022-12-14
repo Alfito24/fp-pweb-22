@@ -66,14 +66,14 @@ Route::post('/dashboard_user/store_request', [StudentController::class, 'storeRe
 Route::post('/dashboard_user/edit_request/{id}', [StudentController::class, 'updateRequest']);
 
 // Lecture
-Route::get('/dashboard_lecture', [LectureController::class, 'index']);
-Route::get('/dashboard_lecture/viewrequest/{id}', [LectureController::class, 'viewRequest']);
+Route::get('/dashboard_lecture', [LectureController::class, 'index'])->middleware('lecture');
+Route::get('/dashboard_lecture/viewrequest/{id}', [LectureController::class, 'viewRequest'])->middleware('lecture');
 Route::post('/acceptlecture/{id}', [LectureController::class, 'accept']);
 Route::post('/rejectlecture/{id}', [LectureController::class, 'reject']);
 
 // Admin
-Route::get('/dashboard_admin', [AdminController::class, 'index2']);
-Route::get('/dashboard_admin/viewrequest/{id}', [AdminController::class, 'viewRequest']);
+Route::get('/dashboard_admin', [AdminController::class, 'index2'])->middleware('admin');
+Route::get('/dashboard_admin/viewrequest/{id}', [AdminController::class, 'viewRequest'])->middleware('admin');
 Route::post('/acceptadmin/{id}', [AdminController::class, 'accept']);
 Route::post('/rejectadmin/{id}', [AdminController::class, 'reject']);
 

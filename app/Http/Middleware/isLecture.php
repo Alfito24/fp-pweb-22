@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class isAdmin
+class isLecture
 {
     /**
      * Handle an incoming request.
@@ -17,7 +17,7 @@ class isAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::check() && Auth::user()->role === 'admin') {
+        if (Auth::check() && Auth::user()->role === 'lecture') {
             return $next($request);
           }
           return abort(403, 'Maaf Anda Tidak Memiliki Akses');
