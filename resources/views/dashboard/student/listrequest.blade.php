@@ -32,7 +32,7 @@
           @if ($request->lecture_acceptance == 1 && $request->admin_acceptance == 1)
          <a href="" class="btn btn-success">No Action Needed</a>
          @elseif ($request->lecture_acceptance == 2 || $request->admin_acceptance == 2)
-         <a href="/editrequest/{{ $request->id }}" class="btn btn-warning">Edit</a>
+         <a href="/dashboard_user/edit_request/{{ $request->id }}" class="btn btn-warning">Edit</a>
          @else
          <button type="button" class="btn btn-warning">Waiting</button>
           @endif

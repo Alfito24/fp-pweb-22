@@ -5,7 +5,7 @@
      Edit Request
   </h2>
   {{-- <strong>{{ $message }}</strong> --}}
-  <form action="/dashboard_user/edit_request/{{ $request->id }}" method="POST" enctype="multipart/form-data">
+  <form action="/dashboard_user/edit_request/{{ $request[0]->id }}" method="POST" enctype="multipart/form-data">
     @csrf
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Title</label>

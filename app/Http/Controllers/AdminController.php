@@ -95,12 +95,12 @@ class AdminController extends Controller
                 return redirect('/dashboard/listuser');
     }
     public function index2(){
-        $request = ModelsRequest::where('lecture_acceptance', 0)->get();
-        return view('dashboard.lecture.listrequest', compact('request'));
+        $request = ModelsRequest::where('lecture_acceptance', 1)->where('admin_acceptance', 0)->get();
+        return view('dashboard.admin.listrequest', compact('request'));
     }
     public function viewRequest($id){
         $request = ModelsRequest::where('id', $id)->get();
-        return view('dashboard.lecture.viewrequest', compact('request'));
+        return view('dashboard.admin.viewrequest', compact('request'));
     }
     public function accept($id){
         ModelsRequest::where('id', $id)->update([

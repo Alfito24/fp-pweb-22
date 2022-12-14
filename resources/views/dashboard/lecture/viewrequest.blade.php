@@ -1,5 +1,5 @@
 @extends('dashboard.lecture.template')
-@section('content')
+@section('container')
 <h2 class="text-center">View Request</h2>
 <table class="table">
     <thead>
@@ -20,13 +20,13 @@
   <div class="d-flex flex-column">
 
   <section >
-  <form class="d-flex flex-column" style="margin-bottom: 20px;" action="/acceptlecture/{{ $request->id }}" method="POST">
+  <form class="d-flex flex-column" style="margin-bottom: 20px;" action="/acceptlecture/{{ $request[0]->id }}" method="POST">
     @csrf
     <button type="submit" class="btn btn-success">Accept</button>
  </form>
 </section >
 <section >
- <form class="d-flex flex-column" action="/rejectlecture/{{ $request->id }}" method="POST">
+ <form class="d-flex flex-column" action="/rejectlecture/{{ $request[0]->id }}" method="POST">
   @csrf
   <button type="submit" class="btn btn-danger" style="margin-bottom: 20px;">Reject</button>
   <div class="form-floating">

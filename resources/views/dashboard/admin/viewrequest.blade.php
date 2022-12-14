@@ -1,5 +1,5 @@
-@extends('dashboard.lecture.template')
-@section('content')
+@extends('dashboard.admin.template')
+@section('container')
 <h2 class="text-center">Request List</h2>
 <table class="table">
     <thead>

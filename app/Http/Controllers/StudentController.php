@@ -40,6 +40,7 @@ class StudentController extends Controller
 	    $tujuan_upload = 'data_file';
 	    $file->move($tujuan_upload,$nama_file);
         ModelsRequest::where('id', $id)->update([
+            'title'=>$request->title,
             'file'=>$nama_file,
             'lecture_acceptance'=>0
         ]);

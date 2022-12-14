@@ -10,7 +10,7 @@
       </tr>
     </thead>
     <tbody>
-    @foreach ($requests as $request )
+    @foreach ($request as $request )
       <tr>
         <th scope="row">{{ $loop->iteration }}</th>
         <td>{{ $request->title }}</td>
