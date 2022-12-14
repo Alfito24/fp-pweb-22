@@ -15,26 +15,25 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('first_name')->nullable();
+            $table->string('first_name');
             $table->string('middle_name')->nullable();
             $table->string('last_name')->nullable();
-            $table->string('email')->unique()->nullable();
-            $table->string('phone_number')->unique()->nullable();
+            $table->string('email')->unique();
+            $table->string('phone_number')->unique();
             $table->date('birth_date')->nullable();
-            $table->string('place_of_birth')->nullable();
+            $table->string('place_of_birth');
             $table->text('photo')->nullable();
-            $table->string('nik')->unique()->nullable();
-            $table->integer('registration_number')->unique()->nullable();
-            $table->integer('group_id')->nullable();
-            $table->string('sex')->nullable();
-            $table->string('religion')->nullable();
-            $table->string('blood_type')->nullable();
-            $table->string('address')->nullable();
-            $table->boolean('isStudent')->default(False);
-            $table->boolean('isLecture')->default(False);
-            $table->boolean('isAdmin')->default(False);
+            $table->string('nik')->unique();
+            $table->string('unit_name');
+            $table->string('registration_number')->unique();
+            $table->string('group_id');
+            $table->string('sex');
+            $table->string('religion');
+            $table->string('blood_type');
+            $table->string('address');
+            $table->string('role');
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password')->nullable();
+            $table->string('password');
             $table->rememberToken();
             $table->timestamps();
         });
@@ -47,6 +46,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        //
     }
 };

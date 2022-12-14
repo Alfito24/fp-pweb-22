@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
+            $table->foreignId('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('previous_degree');
             $table->string('highest_education')->nullable();
@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('level')->nullable();
             $table->string('laboratorium')->nullable();
             $table->date('entry_date')->nullable();
-            $table->string('martial_status')->nullable();
+            $table->string('marital_status')->nullable();
             $table->string('student_type')->nullable();
             $table->string('student_status')->nullable();
             $table->string('parent_address')->nullable();
@@ -33,6 +33,7 @@ return new class extends Migration
             $table->string('instagram_address')->nullable();
             $table->string('twitter_address')->nullable();
             $table->string('whatsapp_address')->nullable();
+            $table->string('student_role')->nullable();
             $table->timestamps();
         });
     }

@@ -15,16 +15,21 @@ return new class extends Migration
     {
         Schema::create('lectures', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('country');
             $table->string('marital_status');
             $table->string('position');
             $table->string('rank');
             $table->string('class');
             $table->string('functional');
+            $table->integer('nidn')->unique();
             $table->string('highest_education');
-            $table->string('before_name_degree');
-            $table->string('after_name_degree');
+            $table->string('before_name_title');
+            $table->string('after_name_title');
             $table->string('laboratorium');
+            $table->string('lecture_status');
+            $table->string('lecture_role');
             $table->timestamps();
         });
     }
