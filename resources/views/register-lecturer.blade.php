@@ -18,9 +18,8 @@
   <body class="text-center">
 
 <main class="form-registration mb-3">
-  <form action="/register-student" method="POST" enctype="multipart/form-data">
+  <form action="/register-lecturer" method="POST" enctype="multipart/form-data">
     @csrf
-    <img class="mb-4 rounded" src="img/bymeals-logo.png" alt="" width="150px">
     <h1 class="h3 mb-3 fw-normal">Additional Data Lecturer</h1>
     <div class="form-floating">
         <input value="{{ old('country') }}" type="text" name="country" class="form-control" id="country">
@@ -82,19 +81,22 @@
         <label for="laboratorium">Laboratorium</label>
     </div>
     <div class="form-floating">
-        <input value="{{ old('lecture_status') }}" type="text" name="lecture_status" class="form-control" id="lecture_status">
-        <label for="lecture_status">Lecture Status</label>
+        <select name="lecture_status" id="lecture_status">
+            <option value=null selected>Select your status</option>
+            <option value="internal">Internal</option>
+            <option value="external">External</option>
+            <option value="outside">Outside</option>
+        </select>
     </div>
     <div class="form-floating">
         <select name="lecture_role" id="lecture_role">
             <option value=null selected>Select your role</option>
-            <option value="departements">Departements</option>
-            <option value="its">ITS</option>
+            <option value="supervisor">Supervisor</option>
+            <option value="examiner">Examiner</option>
+            <option value="head_of_labs">Head of Labs</option>
         </select>
     </div>
-    <button type="submit" class="mt-8 text-lg font-semibold bg-[#3166AD] w-full text-white rounded-xl px-6 py-3 block  hover:text-white hover:bg-[#11468c]" style="box-shadow: 2px 10px 20px rgba(0, 0, 0, 0.25);">
-        Submit
-    </button>
+    <button class="w-100 btn btn-lg btn-warning" type="submit">Submit</button>
   </form>
   <small >Already have an account? <a class="mt-3" href="/login">Login</a></small>
 </main>

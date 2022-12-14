@@ -20,7 +20,6 @@
 <main class="form-registration mb-3">
   <form action="/register" method="POST" enctype="multipart/form-data">
     @csrf
-    <img class="mb-4 rounded" src="img/bymeals-logo.png" alt="" width="150px">
     <h1 class="h3 mb-3 fw-normal">Please Register First</h1>
     <div class="form-floating">
         <input value="{{ old('first_name') }}" type="text" name="first_name" class="form-control" id="first_name">
@@ -102,7 +101,7 @@
         <label for="address">Address</label>
     </div>
     <div class="form-floating">
-        <select name="role" id="cars">
+        <select name="role" id="role">
             <option value=null selected>Select your role</option>
             <option value="student">Student</option>
             <option value="lecture">Lecture</option>

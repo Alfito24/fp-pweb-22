@@ -20,7 +20,6 @@
 <main class="form-registration mb-3">
   <form action="/register-student" method="POST" enctype="multipart/form-data">
     @csrf
-    <img class="mb-4 rounded" src="img/bymeals-logo.png" alt="" width="150px">
     <h1 class="h3 mb-3 fw-normal">Additional Data Student</h1>
     <div class="form-floating">
         <input value="{{ old('previous_degree') }}" type="text" name="previous_degree" class="form-control" id="previous_degree">
@@ -110,9 +109,7 @@
             <option value="fast_track">Fast Track</option>
         </select>
     </div>
-    <button type="submit" class="mt-8 text-lg font-semibold bg-[#3166AD] w-full text-white rounded-xl px-6 py-3 block  hover:text-white hover:bg-[#11468c]" style="box-shadow: 2px 10px 20px rgba(0, 0, 0, 0.25);">
-        Submit
-    </button>
+    <button class="w-100 btn btn-lg btn-warning" type="submit">Submit</button>
   </form>
   <small >Already have an account? <a class="mt-3" href="/login">Login</a></small>
 </main>

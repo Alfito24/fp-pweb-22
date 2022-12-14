@@ -52,7 +52,7 @@ class RegisterController extends Controller
             return redirect('/register-staff');
         }
         else{
-            return redirect('register-lecturer');
+            return redirect('/register-lecturer');
         }
 
     }
@@ -89,6 +89,7 @@ class RegisterController extends Controller
         $student->marital_status = $request->marital_status;
         $student->student_type = $request->student_type;
         $student->student_status = $request->student_status;
+        $student->parent_address = $request->parent_address;
         $student->parent_phone = $request->parent_phone;
         $student->alternate_email_address = $request->alternate_email_address;
         $student->facebook_address = $request->facebook_address;

@@ -18,101 +18,61 @@
   <body class="text-center">
 
 <main class="form-registration mb-3">
-  <form action="/register-student" method="POST" enctype="multipart/form-data">
+  <form action="/register-staff" method="POST" enctype="multipart/form-data">
     @csrf
-    <img class="mb-4 rounded" src="img/bymeals-logo.png" alt="" width="150px">
-    <h1 class="h3 mb-3 fw-normal">Additional Data Staff</h1>
+    <h1 class="h3 mb-3 fw-normal">Additional Data Lecturer</h1>
     <div class="form-floating">
-        <input value="{{ old('marital_status') }}" type="text" name="marital_status" class="form-control" id="previous_degree">
-        <label for="previous_degree">Previous Degree</label>
-        @error('previous_degree')
-        <div class="error">{{ $message }}</div>
-        @enderror
+        <input value="{{ old('marital_status') }}" type="text" name="marital_status" class="form-control" id="marital_status">
+        <label for="marital_status">Marital Status</label>
+    </div>
+    <div class="form-floating">
+        <input value="{{ old('position') }}" type="text" name="position" class="form-control" id="position">
+        <label for="position">Position</label>
+    </div>
+    <div class="form-floating">
+        <input value="{{ old('rank') }}" type="rank" name="rank" class="form-control" id="text">
+        <label for="rank">Rank</label>
+    </div>
+    @error('rank')
+    <div class="error">{{ $message }}</div>
+    @enderror
+    <div class="form-floating">
+        <input value="{{ old('class') }}" type="text" name="class" class="form-control" id="class">
+        <label for="class">Class</label>
+        @error('class')
+    <div class="error">{{ $message }}</div>
+    @enderror
+    </div>
+    <div class="form-floating">
+        <input value="{{ old('functional') }}" type="text" name="functional" class="form-control" id="functional">
+        <label for="functional">Functional</label>
     </div>
     <div class="form-floating">
         <input value="{{ old('highest_education') }}" type="text" name="highest_education" class="form-control" id="highest_education">
         <label for="highest_education">Highest Education</label>
     </div>
     <div class="form-floating">
-        <input value="{{ old('origin_address') }}" type="text" name="origin_address" class="form-control" id="origin_address">
-        <label for="origin_address">Origin Address</label>
-    </div>
-    <div class="form-floating">
-        <input value="{{ old('level') }}" type="level" name="level" class="form-control" id="text">
-        <label for="level">Level</label>
-    </div>
-    @error('level')
-    <div class="error">{{ $message }}</div>
-    @enderror
-    <div class="form-floating">
-        <input value="{{ old('laboratorium') }}" type="text" name="laboratorium" class="form-control" id="laboratorium">
-        <label for="laboratorium">Laboratorium</label>
-        @error('laboratorium')
-    <div class="error">{{ $message }}</div>
-    @enderror
-    </div>
-    <div class="form-floating">
-        <input value="{{ old('entry_date') }}" type="date" name="entry_date" class="form-control" id="entry_date">
-        <label for="entry_date">Entry Date</label>
-    </div>
-    <div class="form-floating">
-        <input value="{{ old('marital_status') }}" type="text" name="marital_status" class="form-control" id="marital_status">
-        <label for="marital_status">Marital Status</label>
-    </div>
-    <div class="form-floating">
-        <input value="{{ old('student_type') }}" type="text" name="student_type" class="form-control" id="student_type">
-        <label for="student_type">Student Type</label>
-    </div>
-    <div class="form-floating">
-        <input value="{{ old('student_status') }}" type="text" name="student_status" class="form-control" id="student_status">
-        <label for="student_status">Student Status</label>
-        @error('student_status')
+        <input value="{{ old('before_name_title') }}" type="text" name="before_name_title" class="form-control" id="before_name_title">
+        <label for="before_name_title">Before Name Title</label>
+        @error('before_name_title')
         <div class="error">{{ $message }}</div>
         @enderror
     </div>
     <div class="form-floating">
-        <input value="{{ old('parent_address') }}" type="text" name="parent_address" class="form-control" id="parent_address">
-        <label for="parent_address">Parent Address</label>
-        @error('parent_address')
+        <input value="{{ old('after_name_title') }}" type="text" name="after_name_title" class="form-control" id="after_name_title">
+        <label for="after_name_title">After Name Title</label>
+        @error('after_name_title')
         <div class="error">{{ $message }}</div>
         @enderror
     </div>
     <div class="form-floating">
-        <input value="{{ old('parent_phone') }}" type="number" name="parent_phone" class="form-control" id="parent_phone">
-        <label for="parent_phone">Parent Phone</label>
-    </div>
-    <div class="form-floating">
-        <input value="{{ old('alternate_email_address') }}" type="email" name="alternate_email_address" class="form-control" id="alternate_email_address">
-        <label for="group_id">Alternate Email Address</label>
-    </div>
-    <div class="form-floating">
-        <input value="{{ old('facebook_address') }}" type="text" name="facebook_address" class="form-control" id="facebook_address">
-        <label for="facebook_address">Facebook Address</label>
-    </div>
-    <div class="form-floating">
-        <input value="{{ old('instagram_address') }}" type="text" name="instagram_address" class="form-control" id="religion">
-        <label for="instagram_address">Instagram Address</label>
-    </div>
-    <div class="form-floating">
-        <input value="{{ old('twitter_address') }}" type="text" name="twitter_address" class="form-control" id="twitter_address">
-        <label for="twitter_address">Twitter Address</label>
-    </div>
-    <div class="form-floating">
-        <input value="{{ old('whatsapp_address') }}" type="number" name="whatsapp_address" class="form-control" id="whatsapp_address">
-        <label for="whatsapp_address"> Whatsapp Address</label>
-    </div>
-    <div class="form-floating">
-        <select name="student_role" id="student_role">
+        <select name="lecture_role" id="lecture_role">
             <option value=null selected>Select your role</option>
-            <option value="bachelor">Bachelor</option>
-            <option value="master">Master</option>
-            <option value="doctoral_degree">Doctoral Degree</option>
-            <option value="fast_track">Fast Track</option>
+            <option value="departements">Departements</option>
+            <option value="its">ITS</option>
         </select>
     </div>
-    <button type="submit" class="mt-8 text-lg font-semibold bg-[#3166AD] w-full text-white rounded-xl px-6 py-3 block  hover:text-white hover:bg-[#11468c]" style="box-shadow: 2px 10px 20px rgba(0, 0, 0, 0.25);">
-        Submit
-    </button>
+    <button class="w-100 btn btn-lg btn-warning" type="submit">Submit</button>
   </form>
   <small >Already have an account? <a class="mt-3" href="/login">Login</a></small>
 </main>
