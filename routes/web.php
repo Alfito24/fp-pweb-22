@@ -7,6 +7,7 @@ use App\Http\Controllers\RequestController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\LectureController;
+use App\Http\Controllers\KalabController;
 
 /*
 |--------------------------------------------------------------------------
@@ -71,10 +72,35 @@ Route::get('/dashboard_lecture/viewrequest/{id}', [LectureController::class, 'vi
 Route::post('/acceptlecture/{id}', [LectureController::class, 'accept']);
 Route::post('/rejectlecture/{id}', [LectureController::class, 'reject']);
 
+// Lecture (Dosen Pembimbing)
+Route::get('/dashboard_dosbing', [LectureController::class, 'index_dosbing']);
+Route::get('/dashboard_dosbing/viewrequest/{id}', [LectureController::class, 'viewRequestDosbing']);
+Route::post('/acceptdosbing/{id}', [LectureController::class, 'acceptDosbing']);
+Route::post('/rejectdosbing/{id}', [LectureController::class, 'rejectDosbing']);
+
+// Lecture (Dosen Penguji)
+Route::get('/dashboard_dospeng', [LectureController::class, 'index_dospeng']);
+Route::get('/dashboard_dospeng/viewrequest/{id}', [LectureController::class, 'viewRequestDospeng']);
+Route::post('/acceptdospeng/{id}', [LectureController::class, 'acceptDospeng']);
+Route::post('/rejectdospeng/{id}', [LectureController::class, 'rejectDospeng']);
+
+
+
 // Admin
 Route::get('/dashboard_admin', [AdminController::class, 'index2'])->middleware('admin');
 Route::get('/dashboard_admin/viewrequest/{id}', [AdminController::class, 'viewRequest'])->middleware('admin');
 Route::post('/acceptadmin/{id}', [AdminController::class, 'accept']);
 Route::post('/rejectadmin/{id}', [AdminController::class, 'reject']);
 
+Route::get('/dashboard_admin/schedule', [AdminController::class, 'scheduleIndex']);
+Route::get('/dashboard_admin/schedule/viewrequest/{id}', [AdminController::class, 'viewRequestSchedule']);
+Route::post('/dashboard_admin/schedule/setschedule/{id}', [AdminController::class, 'setSchedule']);
+
+
+// Kalab
+Route::get('/dashboard_kalab', [KalabController::class, 'index']);
+Route::get('/dashboard_kalab/viewrequest/{id}', [KalabController::class, 'viewRequest']);
+
+Route::post('/acceptkalab/{id}', [KalabController::class, 'accept']);
+Route::post('/rejectkalab/{id}', [KalabController::class, 'reject']);
 
