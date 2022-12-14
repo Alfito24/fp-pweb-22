@@ -15,14 +15,14 @@ return new class extends Migration
     {
         Schema::create('requests', function (Blueprint $table) {
             $table->id();
+            $table->string('title')->nullable();
+            $table->string('note_lecture')->nullable();
+            $table->string('note_admin')->nullable();
             $table->string('file');
-            $table->foreignId('student_id');
-            $table->foreignId('lecture_id')->nullable();
-            $table->foreign('lecture_id')->references('id')->on('lectures')->onDelete('cascade');
-            $table->foreignId('admin_id')->nullable();
-            $table->foreign('admin_id')->references('id')->on('staffs')->onDelete(('cascade'));
-            $table->boolean('lecture_acceptance')->default(false);
-            $table->boolean('admin_acceptance')->default(false);
+            $table->foreignId('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->integer('lecture_acceptance')->default(0);
+            $table->integer('admin_acceptance')->default(0);
             $table->timestamps();
         });
     }

@@ -66,9 +66,7 @@
             </li>
             </form>
 
-
             </ul>
-
 
 
     </div>
@@ -80,7 +78,7 @@
       <a href="/" class="brand-link">
         <img src="{{ asset('admintemplate/') }}/dist/img/Trinity.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
           style="opacity: .8">
-        <span class="brand-text font-weight-light">Buang.in</span>
+        <span class="brand-text font-weight-light">Si Dita</span>
       </a>
 
       <!-- Sidebar -->
@@ -91,7 +89,7 @@
             <img src="{{ asset('admintemplate/') }}/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
-            <a href="" class="d-block">Admin</a>
+            <a href="" class="d-block">Student</a>
           </div>
         </div>
 
@@ -109,7 +107,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="/dashboard" class="nav-link">
+              <a href="/dashboard_user/list_request" class="nav-link">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
                  My Request

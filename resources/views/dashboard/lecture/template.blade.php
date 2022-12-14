@@ -91,7 +91,7 @@
             <img src="{{ asset('admintemplate/') }}/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
-            <a href="" class="d-block">Admin</a>
+            <a href="" class="d-block">Lecture</a>
           </div>
         </div>
 
@@ -101,36 +101,12 @@
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
             <li class="nav-item">
-              <a href="/dashboard" class="nav-link">
+              <a href="/dashboard_lecture" class="nav-link">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
-                 Request
+                 Requests List
                 </p>
               </a>
-
-            </li>
-            <li class="nav-item">
-              <a  class="nav-link">
-                <i class="nav-icon fas fa-user"></i>
-                <p>
-                 User
-                  <i class="right fas fa-angle-left"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="/dashboard/adduser" class="nav-link">
-                    <i class="nav-icon fas fas fa-cart-plus"></i>
-                    <p>Tambah User</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="/dashboard/listuser" class="nav-link">
-                    <i class="nav-icon fas fas fas fas fa-list"></i>
-                    <p>Daftar User</p>
-                  </a>
-                </li>
-              </ul>
             </li>
           </ul>
         </nav>

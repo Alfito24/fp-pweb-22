@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\RequestController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,8 +31,12 @@ Route::get('/login', function () {
 // Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
-Route::get('/make-request', [RequestController::class, 'index']);
-Route::post('/make-request', [RequestController::class, 'store']);
+
+// Request
+// Route::get('/dashboard_user/create_request', [RequestController::class, 'index']);
+// Route::post('/dashboard_user/store_request', [RequestController::class, 'store']);
+// Route::get('/dashboard_user/edit_request', [RequestController::class, 'index']);
+
 Route::get('/dashboard', [AdminController::class, 'index']);
 Route::get('/dashboard/adduser', [AdminController::class, 'adduser']);
 Route::get('/dashboard/listuser', [AdminController::class, 'listUser']);
@@ -51,5 +56,24 @@ Route::get('/register-lecturer', [RegisterController::class, 'index2']);
 Route::post('/register-lecturer', [RegisterController::class, 'store2'] );
 
 
+// Student
+Route::get('/dashboard_user', [StudentController::class, 'index']);
+Route::get('/dashboard_user/list_request', [StudentController::class, 'listRequest']);
+Route::get('/dashboard_user/create_request', [StudentController::class, 'makeRequest']);
+Route::get('/dashboard_user/edit_request/{id}', [StudentController::class, 'editRequest']);
+Route::post('/dashboard_user/store_request', [StudentController::class, 'storeRequest']);
+Route::post('/dashboard_user/edit_request/{id}', [StudentController::class, 'updateRequest']);
+
+// Lecture
+Route::get('/dashboard_lecture', [LectureController::class, 'index']);
+Route::get('/dashboard_lecture/viewrequest/{id}', [LectureController::class, 'viewRequest']);
+Route::post('/acceptlecture/{id}', [LectureController::class, 'accept']);
+Route::post('/rejectlecture/{id}', [LectureController::class, 'reject']);
+
+// Admin
+Route::get('/dashboard_admin', [AdminController::class, 'index2']);
+Route::get('/dashboard_admin/viewrequest/{id}', [AdminController::class, 'viewRequest']);
+Route::post('/acceptadmin/{id}', [AdminController::class, 'accept']);
+Route::post('/rejectadmin/{id}', [AdminController::class, 'reject']);
 
 

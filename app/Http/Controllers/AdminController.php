@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Models\Request as ModelsRequest;
 
 class AdminController extends Controller
 {
@@ -92,5 +93,26 @@ class AdminController extends Controller
                         'gambar_produkMitra' => $nama_file,
                 ]);}
                 return redirect('/dashboard/listuser');
+    }
+    public function index2(){
+        $request = ModelsRequest::where('lecture_acceptance', 0)->get();
+        return view('dashboard.lecture.listrequest', compact('request'));
+    }
+    public function viewRequest($id){
+        $request = ModelsRequest::where('id', $id)->get();
+        return view('dashboard.lecture.viewrequest', compact('request'));
+    }
+    public function accept($id){
+        ModelsRequest::where('id', $id)->update([
+            'admin_acceptance'=>1
+        ]);
+        return redirect('/dashboard_admin');
+    }
+    public function reject(Request $request, $id){
+        ModelsRequest::where('id', $id)->update([
+            'admin_acceptance'=>2,
+            'note_admin'=>$request->note_admin
+        ]);
+        return redirect('/dashboard_admin');
     }
 }

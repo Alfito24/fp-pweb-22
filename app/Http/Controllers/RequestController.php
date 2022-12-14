@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 class RequestController extends Controller
 {
     public function index(){
-        return view('make_request');
+        return view('dashboard.student.make_request');
     }
     public function store(Request $request){
         $file = $request->file('file');
@@ -21,6 +21,6 @@ class RequestController extends Controller
             'file'=>$nama_file,
             'student_id'=>1,
         ]);
-        return redirect('/');
+        return redirect('/dashboard_user');
     }
 }
