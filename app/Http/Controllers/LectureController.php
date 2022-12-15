@@ -17,7 +17,7 @@ class LectureController extends Controller
     }
 
     public function index_dosbing(){
-        $request = ModelsRequest::where('dosbing_redy', false)->get();
+        $request = ModelsRequest::where('dosbing_redy', 0)->get();
         return view('dashboard.lecture-dosbing.listrequest', compact('request'));
     }
 
@@ -57,7 +57,7 @@ class LectureController extends Controller
         ]);
         return redirect('/dashboard_dospeng');
     }
-    
+
     public function rejectDospeng(Request $request, $id){
         ModelsRequest::where('id', $id)->update([
             'dospeng_ready'=>2,
@@ -72,7 +72,7 @@ class LectureController extends Controller
         ]);
         return redirect('/dashboard_lecture');
     }
-    
+
     public function reject(Request $request, $id){
         ModelsRequest::where('id', $id)->update([
             'lecture_acceptance'=>2,
@@ -82,4 +82,4 @@ class LectureController extends Controller
     }
 }
 
-   
+

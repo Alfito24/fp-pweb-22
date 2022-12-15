@@ -18,6 +18,10 @@ class LoginController extends Controller
                 return redirect('/dashboard_user');
             } elseif(Auth::user()->role == 'admin'){
                 return redirect('/dashboard_admin');
+            } elseif(Auth::user()->lecture->lecture_role == 'head_of_labs'){
+                return redirect('/dashboard_kalab');
+            } elseif(Auth::user()->lecture->lecture_role == 'examiner'){
+                return redirect('/dashboard_dospeng');
             } else{
                 return redirect('/dashboard_lecture');
             }

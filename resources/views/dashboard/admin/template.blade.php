@@ -101,10 +101,19 @@
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
             <li class="nav-item">
-              <a href="/dashboard" class="nav-link">
+              <a href="/dashboard_admin" class="nav-link">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
-                 Request
+                 Request Persetujuan
+                </p>
+              </a>
+
+            </li>
+            <li class="nav-item">
+              <a href="/dashboard_admin/schedule" class="nav-link">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                 Request Tanggal
                 </p>
               </a>
 

@@ -108,6 +108,14 @@
                 </p>
               </a>
             </li>
+            <li class="nav-item">
+              <a href="/dashboard_dosbing" class="nav-link">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                 Persetujuan Dosbing
+                </p>
+              </a>
+            </li>
           </ul>
         </nav>
         <!-- /.sidebar-menu -->

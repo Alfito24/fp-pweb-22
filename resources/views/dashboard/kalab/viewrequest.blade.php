@@ -1,5 +1,5 @@
-@extends('dashboard.lecture.templatelecture')
-@section('content')
+@extends('dashboard.lecture.template')
+@section('container')
 <h2 class="text-center">Request List</h2>
 <table class="table">
     <thead>
@@ -24,17 +24,17 @@
   <section >
   <form class="d-flex flex-column" style="margin-bottom: 20px;" action="/acceptkalab/{{ $request->id }}" method="POST">
     @csrf
+    <select name="dospeng_choice" class="mb-3">
+      @foreach($dospeng as $dosen)
 
+          <option value="{{ $dosen->user->first_name }}" >
+              {{ $dosen->user->first_name }}
+          </option>
+
+      @endforeach
+      </select>
     <button type="submit" class="btn btn-success">Accept</button>
-    <select name="dospeng_choice">
-        @foreach($dospeng as $dosen)
-    
-            <option value="{{ $dosen->user->first_name }}" >
-                {{ $dosen->user->first_name }}
-            </option>
-    
-        @endforeach
-        </select>
+
  </form>
 </section >
 <section >

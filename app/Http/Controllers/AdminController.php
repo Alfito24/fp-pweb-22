@@ -118,12 +118,12 @@ class AdminController extends Controller
 
     public function scheduleIndex(){
         $requests = ModelsRequest::where('kalab_acceptance', 1)->get();
-        return view('dashboard.listsetSchedule', compact('requests'));
+        return view('dashboard.admin.listsetSchedule', compact('requests'));
     }
 
     public function viewRequestSchedule($id){
         $request = ModelsRequest::where('id', $id)->get();
-        return view('dashboard.viewrequestSchedule', compact('request'));
+        return view('dashboard.admin.viewrequestSchedule', compact('request'));
     }
 
     public function setSchedule(Request $request, $id){

@@ -11,6 +11,8 @@
         <th>Action</th>
         <th>Lecture's Note</th>
         <th>Admin's Note</th>
+        <th>Dosen Penguji</th>
+        <th>Date</th>
       </tr>
     </thead>
     <tbody>
@@ -29,7 +31,7 @@
             @endif
         </td>
         <td>
-          @if ($request->lecture_acceptance == 1 && $request->admin_acceptance == 1)
+          @if ($request->lecture_acceptance == 1 && $request->admin_acceptance == 1 && $request->kalab_acceptance == 1 && $request->dosbing_redy ==1 && $request->dospeng_redy == 1 )
          <a href="" class="btn btn-success">No Action Needed</a>
          @elseif ($request->lecture_acceptance == 2 || $request->admin_acceptance == 2)
          <a href="/dashboard_user/edit_request/{{ $request->id }}" class="btn btn-warning">Edit</a>
@@ -39,6 +41,8 @@
         </td>
         <td>{{ $request->note_lecture }}</td>
         <td>{{ $request->note_admin }}</td>
+        <td>{{ $request->dospeng_choice }}</td>
+        <td>{{ $request->schedule }}</td>
       </tr>
       @endforeach
     </tbody>

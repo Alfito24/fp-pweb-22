@@ -1,5 +1,5 @@
-@extends('dashboard.kalab.templatekalab')
-@section('content')
+@extends('dashboard.lecture.template')
+@section('container')
 <h2 class="text-center">Request List</h2>
 <table class="table">
     <thead>

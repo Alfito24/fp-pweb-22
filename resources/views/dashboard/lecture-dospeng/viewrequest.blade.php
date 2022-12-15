@@ -1,10 +1,11 @@
-@extends('dashboard.lecture.templatelecture')
-@section('content')
+@extends('dashboard.lecture.template')
+@section('container')
 <h2 class="text-center">Request List</h2>
 <table class="table">
     <thead>
       <tr>
         <th scope="col">Title</th>
+        <th>Date</th>
         <th scope="col">File</th>
       </tr>
     </thead>
@@ -12,6 +13,7 @@
     @foreach ($request as $request )
       <tr>
         <td>{{ $request->user->first_name }}</td>
+        <td>{{ $request->schedule }}</td>
         <td>
           <img src="{{ url('/data_file/'.$request->file) }} " alt="" width="350px" height="350px">
         </td>
